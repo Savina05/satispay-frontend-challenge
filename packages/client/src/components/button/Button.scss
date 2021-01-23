@@ -1,21 +1,23 @@
-@import '../shared//utils';
+@import '../../shared/utils';
 
 .btn {
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
   background-color: $primary-color;
   color: #fff;
   padding: 16px 24px;
   width: fit-content;
   border-radius: 32px;
   display: block;
-  margin: 70px auto;
+  margin: 60px auto;
   transition: all 0.3s ease-in;
 
   &:hover {
     color: #fff;
     transform: translateY(-5px);
-    box-shadow: 0px 2px 15px 2px rgba(#ccc, 1);
+    box-shadow: 0px 2px 15px rgba(#bbb, 1);
   }
 
   &:focus {

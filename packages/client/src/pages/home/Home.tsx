@@ -1,11 +1,12 @@
 import React from 'react';
-import Logo from '../logo/Logo';
-import PokemonLogo from '../logo/PokemonLogo';
-import Button from '../button/Button';
+
+import Logo from '../../components/logo/Logo';
+import PokemonLogo from '../../components/logo/PokemonLogo';
+import Button from '../../components/button/Button';
 
 import './Home.scss';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <>
       <header className="home">

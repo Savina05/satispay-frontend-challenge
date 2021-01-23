@@ -2,12 +2,9 @@ import React from 'react';
 
 import './Button.scss';
 
-type TextType = {
-  text: String;
-  endpoint: string;
-};
+import { IButtonType } from '../../shared/interfaces';
 
-const Button = ({ text, endpoint }: TextType) => {
+const Button: React.FC<IButtonType> = ({ text, endpoint }) => {
   return (
     <a href={endpoint} className="btn">
       {text}

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import logo from './plogo.png';
+
 import './Logo.scss';
 
-const PokemonLogo = () => {
+const PokemonLogo: React.FC = () => {
   return (
     <h1 className="header">
       The{' '}

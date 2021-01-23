@@ -1,21 +1,23 @@
+import { ApolloProvider } from '@apollo/client';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Hello from '../hello/Hello';
-import Home from '../home/Home';
-import Pokemons from '../pokemons/Pokemons';
+import Hello from '../../pages/hello/Hello';
+import Home from '../../pages/home/Home';
+import Pokemons from '../../pages/pokemons/Pokemons';
+import client from '../../shared/apollo-client';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <Router>
-      <>
+    <ApolloProvider client={client}>
+      <Router>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/pokemons" component={Pokemons} />
           <Route path="/hello" component={Hello} />
         </Switch>
-      </>
-    </Router>
+      </Router>
+    </ApolloProvider>
   );
 };
 

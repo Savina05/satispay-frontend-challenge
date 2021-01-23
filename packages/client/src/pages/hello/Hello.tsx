@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Logo from '../logo/Logo';
-import './Hello.scss';
+import Logo from '../../components/logo/Logo';
 
-const Hello = () => {
+const Hello: React.FC = () => {
   return (
     <>
       <Logo />

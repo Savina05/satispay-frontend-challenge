@@ -1,12 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 @import '~antd/dist/antd.css';
 
+// COLORS
+
 $font: 'Source Sans Pro';
 $primary-color: #f94c43;
 $text-color: #6f7272;
 $background: #f2f5f9;
 
-// Animations
+// TYPOGRAPHY
+
+.header {
+  text-align: center;
+  color: $text-color;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.text {
+  margin: 35px auto;
+  text-align: center;
+  max-width: 750px;
+  color: $text-color;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+// ANIMATIONS
 
 @keyframes fadeIn {
   0% {

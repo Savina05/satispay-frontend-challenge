@@ -1,8 +1,10 @@
 import React from 'react';
-import './Logo.scss';
+
 import logo from './satispay.svg.png';
 
-const Logo = () => {
+import './Logo.scss';
+
+const Logo: React.FC = () => {
   return (
     <a href="/">
       <img src={logo} alt="logo" className="logo" />

@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
 
-import Card from '../card/Card';
-
-import './Pokeball.scss';
 import pokeballOpen from './pokeball-open.png';
 import pokeballClosed from './pokeball-closed.png';
 
-const Pokeball = () => {
+import './Pokeball.scss';
+
+// Per i filtri all'input change fare array.filter(e.target.value)
+
+interface IPokeball {
+  id: number;
+}
+
+const Pokeball: React.FC<IPokeball> = ({ id }: IPokeball) => {
   const [open, setOpen] = useState(false);
 
   const closePokeball = () => {
@@ -16,18 +21,19 @@ const Pokeball = () => {
 
   const choosePokemon = () => {
     setOpen(true);
-    info();
-  };
-
-  const info = () => {
     Modal.info({
-      title: 'Pikachu',
-      content: <Card />,
+      title: '',
+      content: (
+        <img
+          className="pkm_img"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+          alt="pokemon"
+        />
+      ),
       afterClose() {
         closePokeball();
       },
       centered: true,
-      okText: 'CLOSE',
     });
   };
 
