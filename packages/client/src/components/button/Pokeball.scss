@@ -1,0 +1,10 @@
+@import '../shared/utils';
+
+.pokeball {
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

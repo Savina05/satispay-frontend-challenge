@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import '~antd/dist/antd.css';
+
+$font: 'Source Sans Pro';
+$primary-color: #f94c43;
+$text-color: #6f7272;
+$background: #f2f5f9;
+
+// Animations
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scalePokemonLogo {
+  0% {
+    transform: scale(0) translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
