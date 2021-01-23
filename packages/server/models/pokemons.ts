@@ -11,6 +11,14 @@ interface Pokemon {
   name: string;
   types: string[];
   classification: string;
+  // resistant: string[];
+  // weaknesses: string[];
+  // evolutions: [
+  //   {
+  //     id: string;
+  //     name: string;
+  //   }
+  // ];
 }
 
 const SIZE = 10;
