@@ -21,7 +21,7 @@ const PokemonsTable = () => {
       width: '10%',
     },
     {
-      title: 'Name',
+      title: 'Name 🔍',
       dataIndex: 'name',
       key: 'name',
     },
@@ -53,11 +53,7 @@ const PokemonsTable = () => {
         <br /> Go and catch 'em all!
       </p>
 
-      <Table
-        dataSource={pokemons}
-        columns={columns}
-        rowKey={(row) => row.cursor}
-      />
+      <Table dataSource={pokemons} columns={columns} rowKey={(p) => p.cursor} />
     </div>
   );
 };
