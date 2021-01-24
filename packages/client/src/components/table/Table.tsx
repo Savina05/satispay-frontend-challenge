@@ -125,8 +125,9 @@ const PokemonsTable: React.FC = () => {
     <div className="container">
       <p className="text">
         Here you will find all the Pokémons of Generation I.
+        <br />
+        Go and catch 'em all!
       </p>
-      <p className="text">Go and catch 'em all!</p>
       <Table
         columns={columns}
         dataSource={filteredPokemons ? filteredPokemons : pokemons}
