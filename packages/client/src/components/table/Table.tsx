@@ -5,13 +5,16 @@ import Pokeball from '../button/Pokeball';
 import { useGetPokemons } from '../../hooks/pokemons/useGetPokemons';
 
 import './Table.scss';
+import { PokemonInterface } from '../../shared/interfaces';
 
-const PokemonsTable = () => {
+const PokemonsTable: React.FC = () => {
   const dataSource = useGetPokemons();
-  const pokemons = dataSource?.pokemons?.edges?.map((item) => ({
-    ...item.node,
-    cursor: item.cursor,
-  }));
+  const pokemons: PokemonInterface[] = dataSource?.pokemons?.edges?.map(
+    (item) => ({
+      ...item.node,
+      cursor: item.cursor,
+    })
+  );
 
   const columns = [
     {
@@ -21,7 +24,7 @@ const PokemonsTable = () => {
       width: '10%',
     },
     {
-      title: 'Name 🔍',
+      title: 'Name',
       dataIndex: 'name',
       key: 'name',
     },
@@ -53,7 +56,12 @@ const PokemonsTable = () => {
         <br /> Go and catch 'em all!
       </p>
 
-      <Table dataSource={pokemons} columns={columns} rowKey={(p) => p.cursor} />
+      <Table
+        dataSource={pokemons}
+        columns={columns}
+        rowKey={(p) => p.cursor}
+        pagination={{}}
+      />
     </div>
   );
 };

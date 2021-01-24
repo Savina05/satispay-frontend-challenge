@@ -2,8 +2,8 @@ import { gql, useQuery } from '@apollo/client';
 import { IPokemonQuery } from '../../shared/interfaces';
 
 const GET_POKEMONS = gql`
-  query Pokemons($name: String, $limit: Int, $after: ID) {
-    pokemons(q: $name, limit: $limit, after: $after) {
+  query Pokemons($limit: Int, $after: ID) {
+    pokemons(limit: $limit, after: $after) {
       edges {
         cursor
         node {
@@ -21,6 +21,8 @@ const GET_POKEMONS = gql`
 `;
 
 export const useGetPokemons = (): IPokemonQuery => {
-  const { data } = useQuery(GET_POKEMONS);
+  const { data } = useQuery(GET_POKEMONS, {
+    variables: { limit: 151 },
+  });
   return data;
 };

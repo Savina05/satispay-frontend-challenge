@@ -13,6 +13,13 @@ export interface IPokemon {
   };
 }
 
+export interface PokemonInterface {
+  cursor: string;
+  name: string;
+  classification: string;
+  types: [string];
+}
+
 export interface IPokemonQuery {
   pokemons: {
     edges: IPokemon[];
