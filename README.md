@@ -1,6 +1,6 @@
 # Instructions to run the app locally
 
-   1. Open the terminal and launch the commands below (you can copy the entire block, comments included)
+   1. Open the terminal and launch the commands below (you can copy the entire block, including the comments)
    
    ```
    # Clone the repository
