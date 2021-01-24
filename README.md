@@ -1,3 +1,19 @@
+# Instructions to run the app locally
+
+1. Clone the repository
+   `git clone https://github.com/Savina05/satispay-frontend-challenge.git`
+2. Install the dependecies
+   `cd satispay-frontend-challenge/packages/server && yarn`
+   `cd ../client && yarn`
+   `cd ...`
+3. Launch BE locally
+   `yarn workspace @frontend-assignment/server start`
+   Important: you have to keep this server running.
+4. Opena a new terminal and launch FE locally
+   Position in the root of the project
+   `yarn workspace @frontend-assignment/client start`
+   Go to http://localhost:3000
+
 # Assignment for Frontend Position
 
 In Satispay one of the main task for a frontend developer is to build useful interfaces in order to display, search and interact with data.

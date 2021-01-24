@@ -26,7 +26,7 @@ const Pokeball: React.FC<IPokeball> = ({ id }: IPokeball) => {
       content: (
         <img
           className="pkm_img"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${id}.png`}
           alt="pokemon"
         />
       ),
