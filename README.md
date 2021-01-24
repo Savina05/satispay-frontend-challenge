@@ -1,18 +1,26 @@
 # Instructions to run the app locally
 
-1. Clone the repository \n
-   `git clone https://github.com/Savina05/satispay-frontend-challenge.git`
-2. Install the dependecies \n
-   `cd satispay-frontend-challenge/packages/server && yarn` \n
-   `cd ../client && yarn` \n
-   `cd ...`
-3. Launch BE locally \n
-   `yarn workspace @frontend-assignment/server start` \n
-   Important: you have to keep this server running.
-4. Opena a new terminal and launch FE locally
-   Position in the root of the project \n
-   `yarn workspace @frontend-assignment/client start` \n
-   Go to http://localhost:3000
+   1. Open the terminal and launch the commands below (you can copy the entire block, comments included)
+   
+   ```
+   # Clone the repository
+   git clone https://github.com/Savina05/satispay-frontend-challenge.git
+   # Install the dependecies
+   cd satispay-frontend-challenge/packages/server && yarn
+   cd ../client && yarn
+   cd ...
+   # Launch BE locally
+   yarn workspace @frontend-assignment/server start 
+   ```
+   Important: keep this terminal open.
+   
+   2. Open a new terminal and position in the root of the project (`satispay-frontend-challenge`) and launch the following command
+   
+   ```
+   # Launch FE locally
+   yarn workspace @frontend-assignment/client start 
+   ```
+   
 
 # Assignment for Frontend Position
 
