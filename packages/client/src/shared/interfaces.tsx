@@ -29,3 +29,10 @@ export interface IPokemonQuery {
     };
   };
 }
+
+export interface IColumnSearchProps {
+  selectedKeys: string;
+  setSelectedKeys: (value: string[]) => string;
+  confirm: () => void;
+  clearFilters: () => string;
+}

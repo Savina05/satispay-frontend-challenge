@@ -1,20 +1,91 @@
-import React from 'react';
-import { Table, Tag } from 'antd';
+import React, { useState } from 'react';
+import { Table, Tag, Input, Button, Space } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
 import Pokeball from '../button/Pokeball';
 import { useGetPokemons } from '../../hooks/pokemons/useGetPokemons';
+import { PokemonInterface, IColumnSearchProps } from '../../shared/interfaces';
 
 import './Table.scss';
-import { PokemonInterface } from '../../shared/interfaces';
 
 const PokemonsTable: React.FC = () => {
+  const [searchText, setSearchText] = useState<string>('');
+  const [searchedColumn, setSearchedColumn] = useState<string>('');
   const dataSource = useGetPokemons();
-  const pokemons: PokemonInterface[] = dataSource?.pokemons?.edges?.map(
+  let pokemons: PokemonInterface[] = dataSource?.pokemons?.edges?.map(
     (item) => ({
       ...item.node,
       cursor: item.cursor,
     })
   );
+  const [filteredPokemons, setFilteredPokemons] = useState<
+    PokemonInterface[]
+  >();
+
+  const handleSearch = (
+    selectedKeys: string,
+    confirm: () => void,
+    dataIndex: string
+  ) => {
+    confirm();
+    setSearchedColumn(dataIndex);
+
+    pokemons?.filter((p) => {
+      return p.name.toLowerCase() === selectedKeys[0].toLowerCase()
+        ? setFilteredPokemons([p])
+        : null;
+    });
+  };
+
+  const handleReset = (clearFilters: () => string) => {
+    clearFilters();
+    setSearchText('');
+    setFilteredPokemons(pokemons);
+  };
+
+  const getColumnSearchProps = (dataIndex: string) => {
+    return {
+      filterDropdown: ({
+        selectedKeys,
+        setSelectedKeys,
+        confirm,
+        clearFilters,
+      }: IColumnSearchProps) => (
+        <div style={{ padding: 8 }}>
+          <Input
+            placeholder={`Search ${dataIndex}`}
+            value={selectedKeys[0]}
+            onChange={(e) =>
+              setSelectedKeys(e.target.value ? [e.target.value] : [])
+            }
+            onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            style={{ width: 188, marginBottom: 8, display: 'block' }}
+          />
+          <Space>
+            <Button
+              type="primary"
+              icon={<SearchOutlined />}
+              size="small"
+              style={{ width: 90 }}
+              onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            >
+              Search
+            </Button>
+            <Button
+              size="small"
+              style={{ width: 90 }}
+              onClick={() => handleReset(clearFilters)}
+            >
+              Reset
+            </Button>
+          </Space>
+        </div>
+      ),
+      filterIcon: (filtered: boolean) => (
+        <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />
+      ),
+    };
+  };
 
   const columns = [
     {
@@ -27,6 +98,7 @@ const PokemonsTable: React.FC = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      ...getColumnSearchProps('name'),
     },
     {
       title: 'Types',
@@ -51,16 +123,10 @@ const PokemonsTable: React.FC = () => {
 
   return (
     <div className="container">
-      <p className="text">
-        Here you will find all the Pokémons of Generation I.
-        <br /> Go and catch 'em all!
-      </p>
-
       <Table
-        dataSource={pokemons}
         columns={columns}
+        dataSource={filteredPokemons ? filteredPokemons : pokemons}
         rowKey={(p) => p.cursor}
-        pagination={{}}
       />
     </div>
   );
