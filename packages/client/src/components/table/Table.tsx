@@ -123,6 +123,8 @@ const PokemonsTable: React.FC = () => {
 
   return (
     <div className="container">
+      <p>Here you will find all the Pokémons of GenerationI.</p>
+      <p>Go and catch 'em all!</p>
       <Table
         columns={columns}
         dataSource={filteredPokemons ? filteredPokemons : pokemons}
