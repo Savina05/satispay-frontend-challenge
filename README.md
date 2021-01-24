@@ -14,7 +14,7 @@
    # Launch BE locally
    yarn workspace @frontend-assignment/server start 
    ```
-   Important: keep this terminal open.
+   **Important: keep this terminal open.**
    
    2. Open a new terminal and position in the root of the project (`satispay-frontend-challenge`) and launch the following command
    
