@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Table, Tag, Input, Button, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
@@ -8,7 +8,7 @@ import { PokemonInterface, IColumnSearchProps } from '../../shared/interfaces';
 
 import './Table.scss';
 
-const PokemonsTable: React.FC = () => {
+const PokemonsTable: FC = () => {
   const [searchText, setSearchText] = useState<string>('');
   const [searchedColumn, setSearchedColumn] = useState<string>('');
   const dataSource = useGetPokemons();

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Hello from '../../pages/hello/Hello';
 import Home from '../../pages/home/Home';
 import Pokemons from '../../pages/pokemons/Pokemons';
-import client from '../../shared/apollo-client';
+import client from './apollo-client';
 
 const App: React.FC = () => {
   return (
