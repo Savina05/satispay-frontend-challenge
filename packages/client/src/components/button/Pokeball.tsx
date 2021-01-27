@@ -6,8 +6,6 @@ import pokeballClosed from './pokeball-closed.png';
 
 import './Pokeball.scss';
 
-// Per i filtri all'input change fare array.filter(e.target.value)
-
 interface IPokeball {
   id: number;
 }
