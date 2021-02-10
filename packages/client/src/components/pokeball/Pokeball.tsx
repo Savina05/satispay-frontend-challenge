@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Modal } from 'antd';
 
 import pokeballOpen from './pokeball-open.png';
@@ -10,8 +10,8 @@ interface IPokeball {
   id: number;
 }
 
-const Pokeball: React.FC<IPokeball> = ({ id }: IPokeball) => {
-  const [open, setOpen] = useState(false);
+const Pokeball: FC<IPokeball> = ({ id }: IPokeball) => {
+  const [open, setOpen] = useState<boolean>(false);
 
   const closePokeball = () => {
     setOpen(false);

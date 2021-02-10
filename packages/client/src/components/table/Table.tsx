@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { Table, Tag, Input, Button, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
-import Pokeball from '../button/Pokeball';
+import Pokeball from '../pokeball/Pokeball';
 import { useGetPokemons } from '../../hooks/pokemons/useGetPokemons';
 import { PokemonInterface, IColumnSearchProps } from '../../shared/interfaces';
 

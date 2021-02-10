@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import Logo from '../../components/logo/Logo';
 
-const Hello: React.FC = () => {
+const Hello: FC = () => {
   return (
     <>
       <Logo />

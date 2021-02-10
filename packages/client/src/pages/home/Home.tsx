@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import Logo from '../../components/logo/Logo';
 import PokemonLogo from '../../components/logo/PokemonLogo';
@@ -6,7 +6,7 @@ import Button from '../../components/button/Button';
 
 import './Home.scss';
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   return (
     <>
       <header className="home">

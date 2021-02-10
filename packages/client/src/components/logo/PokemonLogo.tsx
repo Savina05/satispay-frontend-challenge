@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import logo from './plogo.png';
 
 import './Logo.scss';
 
-const PokemonLogo: React.FC = () => {
+const PokemonLogo: FC = () => {
   return (
     <h1 className="header">
       The{' '}
