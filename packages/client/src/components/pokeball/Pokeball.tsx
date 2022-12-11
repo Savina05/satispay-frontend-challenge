@@ -20,7 +20,6 @@ const Pokeball: FC<IPokeball> = ({ id }: IPokeball) => {
   const choosePokemon = () => {
     setOpen(true);
     Modal.info({
-      title: '',
       icon: null,
       onOk: closePokeball,
       okText: 'Close',
