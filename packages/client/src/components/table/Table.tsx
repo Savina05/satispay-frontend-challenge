@@ -9,8 +9,6 @@ import { PokemonInterface, IColumnSearchProps } from '../../shared/interfaces';
 import './Table.scss';
 
 const PokemonsTable: FC = () => {
-  const [searchText, setSearchText] = useState<string>('');
-  const [searchedColumn, setSearchedColumn] = useState<string>('');
   const dataSource = useGetPokemons();
   let pokemons: PokemonInterface[] = dataSource?.pokemons?.edges?.map(
     (item) => ({
@@ -28,7 +26,6 @@ const PokemonsTable: FC = () => {
     dataIndex: string
   ) => {
     confirm();
-    setSearchedColumn(dataIndex);
 
     pokemons?.filter((p) => {
       return p.name.toLowerCase() === selectedKeys[0].toLowerCase()
@@ -39,7 +36,6 @@ const PokemonsTable: FC = () => {
 
   const handleReset = (clearFilters: () => string) => {
     clearFilters();
-    setSearchText('');
     setFilteredPokemons(pokemons);
   };
 
@@ -87,6 +83,36 @@ const PokemonsTable: FC = () => {
     };
   };
 
+  const getTagColor = (type: string) => {
+    switch (type) {
+      case 'Grass':
+      case 'Bug':
+      case 'Dragon':
+        return 'green';
+      case 'Poison':
+      case 'Psychic':
+        return 'purple';
+      case 'Fire':
+        return 'red';
+      case 'Flying':
+      case 'Water':
+      case 'Ice':
+        return 'blue';
+      case 'Normal':
+      case 'Fighting':
+      case 'Rock':
+      case 'Steel':
+      case 'Ghost':
+        return 'gray';
+      case 'Electric':
+        return 'yellow';
+      case 'Ground':
+        return 'brown';
+      case 'Fairy':
+        return 'violet';
+    }
+  };
+
   const columns = [
     {
       title: 'ID',
@@ -105,7 +131,7 @@ const PokemonsTable: FC = () => {
       dataIndex: 'types',
       key: 'types',
       render: (tags: string[]) =>
-        tags.map((tag) => <Tag color="magenta">{tag}</Tag>),
+        tags.map((tag) => <Tag color={getTagColor(tag)}>{tag}</Tag>),
     },
     {
       title: 'Classification',

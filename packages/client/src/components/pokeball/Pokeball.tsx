@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Modal } from 'antd';
+import { Modal, Row } from 'antd';
 
 import pokeballOpen from './pokeball-open.png';
 import pokeballClosed from './pokeball-closed.png';
@@ -21,12 +21,18 @@ const Pokeball: FC<IPokeball> = ({ id }: IPokeball) => {
     setOpen(true);
     Modal.info({
       title: '',
+      icon: null,
+      onOk: closePokeball,
+      okText: 'Close',
+      okType: 'text',
       content: (
-        <img
-          className="pkm_img"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-          alt="pokemon"
-        />
+        <Row justify="center">
+          <img
+            className="pkm_img"
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+            alt="pokemon"
+          />
+        </Row>
       ),
       afterClose() {
         closePokeball();
