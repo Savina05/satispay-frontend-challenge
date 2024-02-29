@@ -6,11 +6,6 @@
    # Clone the repository
    git clone https://github.com/Savina05/satispay-frontend-challenge.git
    
-   # Install the dependecies
-   cd satispay-frontend-challenge/packages/server && yarn
-   cd ../client && yarn
-   cd ...
-   
    # Launch BE locally
    yarn workspace @frontend-assignment/server start 
    ```
